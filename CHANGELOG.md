@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+
+- Do not automatically merge conflicts.
+- Consolidate pull and push and their outputs.
+
 ## [3.0.11] - 2023-10-06
 
 ### Fixed
@@ -110,7 +115,7 @@ _Stable release based on [3.0.0-rc.2]._
 ## [2.2.0] - 2017-06-05
 ### Changed
  - Increment minor version when release is created #31
- 
+
 ### Fixed
  - Initialization checks only local branches #73
  - `omgf pull` updates only local branches with remote branch #59

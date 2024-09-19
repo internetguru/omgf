@@ -76,14 +76,15 @@ EXIT CODES
 2
     Parse or invalid option error.
 3
-    Git is not conform with the branching model (fixable).
+    Nonconforming, fixable with --conform / --init.
 4
-    Git is not conform with the branching model (unfixable).
+    Nonconforming, cannot be fixed automatically.
 5
-    Git status is not empty AKA uncommitted changes.
+    Uncommitted changes.
 6
-    Nothing to do (e. g. empty merge).
-
+    Nothing to do, e. g. empty merge.
+7
+    Unexpected merge conflicts.
 
 REPOSITORY
 ==========

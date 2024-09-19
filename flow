@@ -152,6 +152,11 @@ main() {
       || err "${out}"
   }
 
+  git_reset() {
+    local out
+    out="$(git reset "${@}" 2>&1)"
+  }
+
   git_log() {
     local out
     out="$(git log "${@}" 2>&1)" \
@@ -243,7 +248,7 @@ main() {
   git_merge() {
     local out
     out="$(env GIT_EDITOR=: git merge "${@}" 2>&1)" \
-      || err "${out}"
+      || err "${out}" 7
   }
 
   git_show() {
@@ -387,10 +392,10 @@ main() {
       && return
     git_merge_nocommit "${1}"
     # hard reset version file regardless of a conflict
-    git reset -q "${VERSION}"
+    git_reset -q "${VERSION}"
     git_checkout "${VERSION}"
     flow_sed -i '/^<<<<<<< /d;0,/^=======$/s///;/^=======$/d;/^>>>>>>> /d' "${CHANGELOG}"
-    git_add .
+    git_add "${CHANGELOG}" "${VERSION}"
     git_merge --continue
   }
 
