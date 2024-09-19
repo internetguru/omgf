@@ -762,3 +762,24 @@ start "merge hotfix with unmerged staging"
   debug "flow -n"
   assert_equal "${status}" 0
 end
+#######################################
+: $((i++))
+start "merge staging into dev with conflicts"
+  take "${i}"
+  {
+    flow -iy \
+    && flow --yes \
+    && git checkout dev \
+    && echo "dev content" > a \
+    && git add a \
+    && git commit -m "Update file 'a' in dev" \
+    && git checkout staging \
+    && echo "staging content" > a \
+    && git add a \
+    && git commit -m "Update file 'a' in staging" \
+    && git checkout dev
+  } >/dev/null 2>&1
+  debug "flow --yes --conform"
+  assert_equal "${status}" 7
+  assert_equal "${errlines[0]}" "flow: error: Committing is not possible because you have unmerged files."
+end
