@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+
 ## [3.1.0-rc.1] - 2024-09-19
 
 ### Changed
@@ -172,6 +174,7 @@ _Stable release based on [3.0.0-rc.2]._
 
 ## [1.0.0] - 2016-12-22
 
+[Unreleased]: https://https://github.com/internetguru/flow/compare/staging...dev
 [3.1.0-rc.1]: https://github.com/internetguru/flow/releases/tag/v3.0.11
 [3.0.11]: https://https://github.com/internetguru/flow/compare/v3.0.10...v3.0.11
 [3.0.10]: https://https://github.com/internetguru/flow/compare/v3.0.9...3.0.10
